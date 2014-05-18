@@ -1,3 +1,5 @@
+
+
 // Recieves serial input to signal user which direction to travel
 
 /*---------------- Includes ---------------------------------*/
@@ -228,8 +230,8 @@ void getCurrMotors(void) {
       switch(signalNum) {
         case(1):
         if(true) {
-          FL = FR = 0;        //which motors are on
-          BL = BR = 1;
+          FL = FR = 1;        //which motors are on
+          BL = BR = 0;
           signalLevel = 255;  //level for all motors
           signalDuration = 200;  //length of this beat
         }
@@ -369,24 +371,24 @@ void getCurrMotors(void) {
         }break;
     }break;
     
-    case(LEFT_PATTERN):
-    switch(signalNum) {
-        case(1):
-        if(true) {
-          BR = FR = 0; 
-          BL = FL = 1; 
-          signalLevel = 255; 
-          signalDuration = 200;
-        }
-        break;
-        case(2):
-        if(true) {
-          FL = FR = BL = BR = 0; 
-          signalLevel = 255; 
-          signalDuration = 100;
-          repeatPattern();
-        }break;
-      }break;
+    // case(LEFT_PATTERN):
+    // switch(signalNum) {
+    //     case(1):
+    //     if(true) {
+    //       BR = FR = 0; 
+    //       BL = FL = 1; 
+    //       signalLevel = 255; 
+    //       signalDuration = 200;
+    //     }
+    //     break;
+    //     case(2):
+    //     if(true) {
+    //       FL = FR = BL = BR = 0; 
+    //       signalLevel = 255; 
+    //       signalDuration = 100;
+    //       repeatPattern();
+    //     }break;
+    //   }break;
     
     case(FRONTLEFT_PATTERN):
     switch(signalNum){
