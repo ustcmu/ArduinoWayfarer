@@ -316,67 +316,100 @@ void getCurrMotors(void) {
           FR = 0; FL = BL = BR = 0; signalLevel = 255; 
           signalDuration = 100;
         }break;
-        case(3):
+        case(5):
         if(true) {
           FR = 1; FL = BL = BR = 0; signalLevel = 255; 
           signalDuration = 300; 
-          case(3):
+          case(6):
         if(true) {
           FR = 0; FL = BL = BR = 0; signalLevel = 255; 
           signalDuration = 100;  
-          repeatPattern();           
-       
-        }break;        
+          repeatPattern();                   
         }break;
     }break;
     
     case(RIGHT_PATTERN):
     switch(signalNum) {
-        case(1):
-        if(true) {
-          BR = FR = 1; 
-          BL = FL = 0; 
-          signalLevel = 255; 
-          signalDuration = 200;
-        }
-        break;
-        case(2):
-        if(true) {
-          FL = FR = BL = BR = 0; 
-          signalLevel = 255; 
-          signalDuration = 100;
-          repeatPattern();
+      case(1):
+      if(true) {
+          BL = 1; FL = FR = BR = 0; signalLevel = 255; 
+          signalDuration = 150;
         }break;
+       case(2):
+       if(true) {
+          FL = 1; FR = BL = BR = 0; signalLevel = 255; 
+          signalDuration = 200;
+        }break;
+        case(3):
+        if(true) {
+          FR = 1; FL = BL = BR = 0; signalLevel = 255; 
+          signalDuration = 250;         
+        }break;
+        case(4):
+        if(true) {
+          FR = BR = 1; FL = BL = 0; signalLevel = 255; 
+          signalDuration = 300;         
+        }break;
+        case(5):
+        if(true) {
+          FR = FL = BL = BR = 0; signalLevel = 255; 
+          signalDuration = 100;
+        }break;
+        case(6):
+         if(true) {
+          FR = BR = 1; FL = BL = 0; signalLevel = 255; 
+          signalDuration = 300;         
+        }break;
+        case(7):
+        if(true) {
+          FR  = FL = BL = BR = 0; signalLevel = 255; 
+          signalDuration = 100;
+        }break;
+           case(8):
+         if(true) {
+          FR = BR = 1; FL = BL = 0; signalLevel = 255; 
+          signalDuration = 300;         
+        }break;
+        case(9):
+        if(true) {
+          FR  = FL = BL = BR = 0; signalLevel = 255; 
+          signalDuration = 100;
+          repeatPattern();           
+        }break;
+
       }break;
       
     case(BACKRIGHT_PATTERN):
     switch(signalNum){
       case(1):
       if(true) {
-          BR = 1; 
-          FL = BL = FR = 0; 
-          signalLevel = 255; 
-          signalDuration = 200;
+          FL = 1; BL = FR = BR = 0; signalLevel = 255; 
+          signalDuration = 150;
         }break;
        case(2):
        if(true) {
-          BR = FL = BL = FR = 0; 
-          signalLevel = 255; 
-          signalDuration = 300;
+          FR = 1; FL = BL = BR = 0; signalLevel = 255; 
+          signalDuration = 200;
         }break;
         case(3):
         if(true) {
-          BR = 1; 
-          FL = BL = FR = 0; 
-          signalLevel = 255; 
+          BR = 1; FL = BL = FR = 0; signalLevel = 255; 
           signalDuration = 300;         
         }break;
         case(4):
         if(true) {
-          BR = FL = BL = FR = 0; 
-          signalLevel = 255; 
-          signalDuration = 200;
-          repeatPattern();           
+          BR = 0; FL = BL = FR = 0; signalLevel = 255; 
+          signalDuration = 100;
+        }break;
+        case(5):
+        if(true) {
+          BR = 1; FL = BL = FR = 0; signalLevel = 255; 
+          signalDuration = 300; 
+          case(6):
+        if(true) {
+          BR = 0; FL = BL = FR = 0; signalLevel = 255; 
+          signalDuration = 100;  
+          repeatPattern();                   
         }break;
     }break;
       
@@ -384,16 +417,64 @@ void getCurrMotors(void) {
     switch(signalNum) {
         case(1):
         if(true) {
-          FL = FR = 0; 
-          BL = BR = 1; 
-          signalLevel = 255; 
-          signalDuration = 200;
+          FL = FR = 1;        //which motors are on
+          BL = BR = 0;
+          signalLevel = 255;  //level for all motors
+          signalDuration = 200;  //length of this beat
         }
         break;
-        case(2):
+          case(2):
         if(true) {
-          FL = FR = BL = BR = 0; 
-          signalLevel = 255; 
+          FL = FR = 0;        //which motors are on
+          BL = BR = 0;
+          signalLevel = 255;  //level for all motors
+          signalDuration = 100;  //length of this beat
+        }
+        break; 
+         case(3):
+        if(true) {
+          FL = FR = 0;        //which motors are on
+          BL = BR = 1;
+          signalLevel = 255;  //level for all motors
+          signalDuration = 200;  //length of this beat
+        }
+        break;
+          case(4):
+        if(true) {
+          FL = FR = 0;        //which motors are on
+          BL = BR = 0;
+          signalLevel = 255;  //level for all motors
+          signalDuration = 100;  //length of this beat
+        }
+        break;
+        case(5):
+        if(true) {
+          FL = FR = 0;        //which motors are on
+          BL = BR = 1;
+          signalLevel = 255;  //level for all motors
+          signalDuration = 200;  //length of this beat
+        }
+        break;
+        case(6):
+        if(true) {
+          FL = FR = 0;
+          BL = BR = 0;
+          signalLevel = 255;
+          signalDuration = 100;
+        }break;
+          case(7):
+        if(true) {
+          FL = FR = 0;        //which motors are on
+          BL = BR = 1;
+          signalLevel = 255;  //level for all motors
+          signalDuration = 200;  //length of this beat
+        }
+        break;
+        case(8):
+        if(true) {
+          FL = FR = 0;
+          BL = BR = 0;
+          signalLevel = 255;
           signalDuration = 100;
           repeatPattern();
         }break;
@@ -403,80 +484,118 @@ void getCurrMotors(void) {
     switch(signalNum){
       case(1):
       if(true) {
-          BL = 1; 
-          FR = FL = BR = 0; 
-          signalLevel = 255; 
-          signalDuration = 100;
+          FR = 1; BL = FL = BR = 0; signalLevel = 255; 
+          signalDuration = 150;
         }break;
        case(2):
        if(true) {
-          BL  = FR = FL = BR = 0; 
-          signalLevel = 255; 
+          BR = 1; FL = BL = FR = 0; signalLevel = 255; 
           signalDuration = 200;
         }break;
         case(3):
         if(true) {
-          BL = 1; 
-          FR = FL = BR = 0; 
-          signalLevel = 255; 
-          signalDuration = 200;         
+          BL = 1; BR = FL = FR = 0; signalLevel = 255; 
+          signalDuration = 300;         
         }break;
         case(4):
         if(true) {
-          BL = FR = FL = BR = 0; 
-          signalLevel = 255; 
+          BR = 0; FL = BL = FR = 0; signalLevel = 255; 
+          signalDuration = 100;
+        }break;
+        case(3):
+        if(true) {
+           BL= 1; FL = BR = FR = 0; signalLevel = 255; 
+          signalDuration = 300; 
+          case(3):
+        if(true) {
+          BR = 0; FL = BL = FR = 0; signalLevel = 255; 
+          signalDuration = 100;  
+          repeatPattern();                   
+        }break;
+    }break;    
+    case(LEFT_PATTERN):
+   switch(signalNum) {
+      case(1):
+      if(true) {
+          BR = 1; FL = FR = BL = 0; signalLevel = 255; 
+          signalDuration = 150;
+        }break;
+       case(2):
+       if(true) {
+          FR = 1; FL = BL = BR = 0; signalLevel = 255; 
           signalDuration = 200;
+        }break;
+        case(3):
+        if(true) {
+          FL = 1; FR = BL = BR = 0; signalLevel = 255; 
+          signalDuration = 250;         
+        }break;
+        case(4):
+        if(true) {
+          FL = BL = 1; FR = BR = 0; signalLevel = 255; 
+          signalDuration = 300;         
+        }break;
+        case(5):
+        if(true) {
+          FR  = FL = BL = BR = 0; signalLevel = 255; 
+          signalDuration = 100;
+        }break;
+        case(6):
+         if(true) {
+          FL = BL = 1; FR = BR = 0; signalLevel = 255; 
+          signalDuration = 300;         
+        }break;
+        case(7):
+        if(true) {
+          FR  = FL = BL = BR = 0; signalLevel = 255; 
+          signalDuration = 100;
+        }break;
+           case(8):
+         if(true) {
+          FL = BL = 1; FR = BR = 0; signalLevel = 255; 
+          signalDuration = 300;         
+        }break;
+        case(9):
+        if(true) {
+          FR  = FL = BL = BR = 0; signalLevel = 255; 
+          signalDuration = 100;
           repeatPattern();           
         }break;
-    }break;
-    
-    case(LEFT_PATTERN):
-    switch(signalNum) {
-        case(1):
-        if(true) {
-          BR = FR = 0; 
-          BL = FL = 1; 
-          signalLevel = 255; 
-          signalDuration = 200;
-        }
-        break;
-        case(2):
-        if(true) {
-          FL = FR = BL = BR = 0; 
-          signalLevel = 255; 
-          signalDuration = 100;
-          repeatPattern();
-        }break;
+
       }break;
+
     
     case(FRONTLEFT_PATTERN):
     switch(signalNum){
       case(1):
       if(true) {
-          FL = 1; 
-          FR = BL = BR = 0; 
-          signalLevel = 255; 
-          signalDuration = 100;
+          BR = 1; FL = FR = BL = 0; signalLevel = 255; 
+          signalDuration = 150;
         }break;
        case(2):
        if(true) {
-          FL = FR = BL = BR = 0; 
-          signalLevel = 255; 
+          FR = 1; FL = BL = BR = 0; signalLevel = 255; 
           signalDuration = 200;
         }break;
         case(3):
         if(true) {
-          FL = 1; 
-          FR = BL = BR = 0; 
-          signalLevel = 255; 
-          signalDuration = 200;         
+          FL = 1; FR = BL = BR = 0; signalLevel = 255; 
+          signalDuration = 300;         
         }break;
         case(4):
         if(true) {
-          FL = FR = BL = BR = 0; 
-          signalLevel = 255; 
-          signalDuration = 200;
-          repeatPattern();           
+          FR = FL = BL = BR = 0; signalLevel = 255; 
+          signalDuration = 100;
+        }break;
+        case(5):
+        if(true) {
+          FL = 1; FR = BL = BR = 0; signalLevel = 255; 
+          signalDuration = 300; 
+          case(6):
+        if(true) {
+          FR = FL = BL = BR = 0; signalLevel = 255; 
+          signalDuration = 100;  
+          repeatPattern();                   
         }break;
     }break;
     
