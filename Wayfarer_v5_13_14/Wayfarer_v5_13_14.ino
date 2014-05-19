@@ -320,6 +320,7 @@ void getCurrMotors(void) {
         if(true) {
           FR = 1; FL = BL = BR = 0; signalLevel = 255; 
           signalDuration = 300; 
+          }break;
           case(6):
         if(true) {
           FR = 0; FL = BL = BR = 0; signalLevel = 255; 
@@ -405,6 +406,7 @@ void getCurrMotors(void) {
         if(true) {
           BR = 1; FL = BL = FR = 0; signalLevel = 255; 
           signalDuration = 300; 
+          }break;
           case(6):
         if(true) {
           BR = 0; FL = BL = FR = 0; signalLevel = 255; 
@@ -502,17 +504,19 @@ void getCurrMotors(void) {
           BR = 0; FL = BL = FR = 0; signalLevel = 255; 
           signalDuration = 100;
         }break;
-        case(3):
+        case(5):
         if(true) {
            BL= 1; FL = BR = FR = 0; signalLevel = 255; 
           signalDuration = 300; 
-          case(3):
+           }break;
+        case(6):
         if(true) {
           BR = 0; FL = BL = FR = 0; signalLevel = 255; 
           signalDuration = 100;  
           repeatPattern();                   
         }break;
-    }break;    
+    }break;
+
     case(LEFT_PATTERN):
    switch(signalNum) {
       case(1):
@@ -591,6 +595,7 @@ void getCurrMotors(void) {
         if(true) {
           FL = 1; FR = BL = BR = 0; signalLevel = 255; 
           signalDuration = 300; 
+          }break;
           case(6):
         if(true) {
           FR = FL = BL = BR = 0; signalLevel = 255; 
@@ -838,56 +843,56 @@ void choosePattern(int targetHeading) {
   if ((targetHeading >= 337.5 || targetHeading < 22.5) && targetHeading >= 0) {
     if(!BLE) Serial.println("F");
     SignalPattern = FORWARD_PATTERN;
-    TMRArd_InitTimer(REPEATTIMER, 2000);
+    TMRArd_InitTimer(REPEATTIMER, 10000);
     repeatNum = 4;
     return;
   }
   if (targetHeading >= 22.5 && targetHeading < 67.5) {
     if(!BLE) Serial.println("FR");
     SignalPattern = FRONTRIGHT_PATTERN;
-    TMRArd_InitTimer(REPEATTIMER, 2000);
+    TMRArd_InitTimer(REPEATTIMER, 10000);
     repeatNum = 4;
     return;
   }
   if (targetHeading >= 67.5 && targetHeading < 112.5) {
     if(!BLE) Serial.println("R");
     SignalPattern = RIGHT_PATTERN;
-    TMRArd_InitTimer(REPEATTIMER, 2000);
+    TMRArd_InitTimer(REPEATTIMER, 10000);
     repeatNum = 4;
     return;
   }
   if (targetHeading >= 112.5 && targetHeading < 157.5) {
     if(!BLE) Serial.println("BR");
     SignalPattern = BACKRIGHT_PATTERN;
-    TMRArd_InitTimer(REPEATTIMER, 2000);
+    TMRArd_InitTimer(REPEATTIMER, 10000);
     repeatNum = 4;
     return;
   }
   if (targetHeading >= 157.5 && targetHeading < 202.5) {
     if(!BLE) Serial.println("B");
     SignalPattern = BACK_PATTERN;
-    TMRArd_InitTimer(REPEATTIMER, 2000);
+    TMRArd_InitTimer(REPEATTIMER, 10000);
     repeatNum = 4;
     return;
   }
   if (targetHeading >= 202.5 && targetHeading < 247.5) {
     if(!BLE) Serial.println("BL");
     SignalPattern = BACKLEFT_PATTERN;
-    TMRArd_InitTimer(REPEATTIMER, 2000);
+    TMRArd_InitTimer(REPEATTIMER, 10000);
     repeatNum = 4;
     return;
   }
   if (targetHeading >= 247.5 && targetHeading < 292.5) {
     if(!BLE) Serial.println("L");
     SignalPattern = LEFT_PATTERN;
-    TMRArd_InitTimer(REPEATTIMER, 2000);
+    TMRArd_InitTimer(REPEATTIMER, 10000);
     repeatNum = 4;
     return;
   }
   if (targetHeading >= 292.5 && targetHeading < 337.5) {
     if(!BLE) Serial.println("FL");
     SignalPattern = FRONTLEFT_PATTERN;
-    TMRArd_InitTimer(REPEATTIMER, 2000);
+    TMRArd_InitTimer(REPEATTIMER, 10000);
     repeatNum = 4;
     return;
   }
@@ -901,35 +906,35 @@ void choosePattern(int targetHeading) {
   if (targetHeading == ARVD) {
     if(!BLE) Serial.println("Arvd");
     SignalPattern = ARRIVED_PATTERN;
-    TMRArd_InitTimer(REPEATTIMER, 2000);
+    TMRArd_InitTimer(REPEATTIMER, 10000);
     repeatNum = 4000;
     return;
   }
   if (targetHeading == WYPNT) {
     if(!BLE) Serial.println("Wypnt");
     SignalPattern = WAYPOINT_PATTERN;
-    TMRArd_InitTimer(REPEATTIMER, 2000);
+    TMRArd_InitTimer(REPEATTIMER, 10000);
     repeatNum = 1;
     return;
   }
   if (targetHeading == START) {
     if(!BLE) Serial.println("Start");
     SignalPattern = START_PATTERN;
-    TMRArd_InitTimer(REPEATTIMER, 2000);
+    TMRArd_InitTimer(REPEATTIMER, 10000);
     repeatNum = 3;
     return;
   }
   if (targetHeading == PAUSE) {
     if(!BLE) Serial.println("Pause");
     SignalPattern = PAUSE_PATTERN;
-    TMRArd_InitTimer(REPEATTIMER, 2000);
+    TMRArd_InitTimer(REPEATTIMER, 10000);
     repeatNum = 1;
     return;
   }
   if (targetHeading == TRBL) {
     if(!BLE) Serial.println("Trouble");
     SignalPattern = TROUBLE_PATTERN;
-    TMRArd_InitTimer(REPEATTIMER, 5000);
+    TMRArd_InitTimer(REPEATTIMER, 10000);
     repeatNum = 30000;
     return;
   }
