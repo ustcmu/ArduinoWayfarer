@@ -1,5 +1,6 @@
 
 
+
 // Recieves serial input to signal user which direction to travel
 
 /*---------------- Includes ---------------------------------*/
@@ -230,13 +231,60 @@ void getCurrMotors(void) {
       switch(signalNum) {
         case(1):
         if(true) {
+          FL = FR = 0;        //which motors are on
+          BL = BR = 1;
+          signalLevel = 255;  //level for all motors
+          signalDuration = 200;  //length of this beat
+        }
+        break;
+          case(2):
+        if(true) {
+          FL = FR = 0;        //which motors are on
+          BL = BR = 0;
+          signalLevel = 255;  //level for all motors
+          signalDuration = 100;  //length of this beat
+        }
+        break; 
+         case(3):
+        if(true) {
           FL = FR = 1;        //which motors are on
           BL = BR = 0;
           signalLevel = 255;  //level for all motors
           signalDuration = 200;  //length of this beat
         }
         break;
-        case(2):
+          case(4):
+        if(true) {
+          FL = FR = 0;        //which motors are on
+          BL = BR = 0;
+          signalLevel = 255;  //level for all motors
+          signalDuration = 100;  //length of this beat
+        }
+        break;
+        case(5):
+        if(true) {
+          FL = FR = 1;        //which motors are on
+          BL = BR = 0;
+          signalLevel = 255;  //level for all motors
+          signalDuration = 200;  //length of this beat
+        }
+        break;
+        case(6):
+        if(true) {
+          FL = FR = 0;
+          BL = BR = 0;
+          signalLevel = 255;
+          signalDuration = 100;
+        }break;
+          case(7):
+        if(true) {
+          FL = FR = 1;        //which motors are on
+          BL = BR = 0;
+          signalLevel = 255;  //level for all motors
+          signalDuration = 200;  //length of this beat
+        }
+        break;
+        case(8):
         if(true) {
           FL = FR = 0;
           BL = BR = 0;
@@ -250,13 +298,13 @@ void getCurrMotors(void) {
     switch(signalNum){
       case(1):
       if(true) {
-          FR = 1; FL = BL = BR = 0; signalLevel = 255; 
-          signalDuration = 200;
+          BL = 1; FL = FR = BR = 0; signalLevel = 255; 
+          signalDuration = 150;
         }break;
        case(2):
        if(true) {
-          FR = 0; FL = BL = BR = 0; signalLevel = 255; 
-          signalDuration = 300;
+          FL = 1; FR = BL = BR = 0; signalLevel = 255; 
+          signalDuration = 200;
         }break;
         case(3):
         if(true) {
@@ -266,8 +314,19 @@ void getCurrMotors(void) {
         case(4):
         if(true) {
           FR = 0; FL = BL = BR = 0; signalLevel = 255; 
-          signalDuration = 200;
+          signalDuration = 100;
+        }break;
+        case(3):
+        if(true) {
+          FR = 1; FL = BL = BR = 0; signalLevel = 255; 
+          signalDuration = 300; 
+          case(3):
+        if(true) {
+          FR = 0; FL = BL = BR = 0; signalLevel = 255; 
+          signalDuration = 100;  
           repeatPattern();           
+       
+        }break;        
         }break;
     }break;
     
@@ -371,24 +430,24 @@ void getCurrMotors(void) {
         }break;
     }break;
     
-    // case(LEFT_PATTERN):
-    // switch(signalNum) {
-    //     case(1):
-    //     if(true) {
-    //       BR = FR = 0; 
-    //       BL = FL = 1; 
-    //       signalLevel = 255; 
-    //       signalDuration = 200;
-    //     }
-    //     break;
-    //     case(2):
-    //     if(true) {
-    //       FL = FR = BL = BR = 0; 
-    //       signalLevel = 255; 
-    //       signalDuration = 100;
-    //       repeatPattern();
-    //     }break;
-    //   }break;
+    case(LEFT_PATTERN):
+    switch(signalNum) {
+        case(1):
+        if(true) {
+          BR = FR = 0; 
+          BL = FL = 1; 
+          signalLevel = 255; 
+          signalDuration = 200;
+        }
+        break;
+        case(2):
+        if(true) {
+          FL = FR = BL = BR = 0; 
+          signalLevel = 255; 
+          signalDuration = 100;
+          repeatPattern();
+        }break;
+      }break;
     
     case(FRONTLEFT_PATTERN):
     switch(signalNum){
