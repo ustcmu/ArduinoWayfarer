@@ -233,8 +233,8 @@ void getCurrMotors(void) {
         if(true) {
           FL = FR = 0;        //which motors are on
           BL = BR = 1;
-          signalLevel = 255;  //level for all motors
-          signalDuration = 200;  //length of this beat
+          signalLevel = 175;  //level for all motors
+          signalDuration = 150;  //length of this beat
         }
         break;
           case(2):
@@ -298,13 +298,13 @@ void getCurrMotors(void) {
     switch(signalNum){
       case(1):
       if(true) {
-          BL = 1; FL = FR = BR = 0; signalLevel = 255; 
+          BL = 1; FL = FR = BR = 0; signalLevel = 150; 
           signalDuration = 150;
         }break;
        case(2):
        if(true) {
-          FL = 1; FR = BL = BR = 0; signalLevel = 255; 
-          signalDuration = 200;
+          FL = 1; FR = BL = BR = 0; signalLevel = 175; 
+          signalDuration = 175;
         }break;
         case(3):
         if(true) {
@@ -333,18 +333,18 @@ void getCurrMotors(void) {
     switch(signalNum) {
       case(1):
       if(true) {
-          BL = 1; FL = FR = BR = 0; signalLevel = 255; 
+          BL = 1; FL = FR = BR = 0; signalLevel = 150; 
           signalDuration = 150;
         }break;
        case(2):
        if(true) {
-          FL = 1; FR = BL = BR = 0; signalLevel = 255; 
-          signalDuration = 200;
+          FL = 1; FR = BL = BR = 0; signalLevel = 175; 
+          signalDuration = 175;
         }break;
         case(3):
         if(true) {
           FR = 1; FL = BL = BR = 0; signalLevel = 255; 
-          signalDuration = 250;         
+          signalDuration = 225;         
         }break;
         case(4):
         if(true) {
@@ -421,8 +421,8 @@ void getCurrMotors(void) {
         if(true) {
           FL = FR = 1;        //which motors are on
           BL = BR = 0;
-          signalLevel = 255;  //level for all motors
-          signalDuration = 200;  //length of this beat
+          signalLevel = 150;  //level for all motors
+          signalDuration = 175;  //length of this beat
         }
         break;
           case(2):
@@ -521,18 +521,18 @@ void getCurrMotors(void) {
    switch(signalNum) {
       case(1):
       if(true) {
-          BR = 1; FL = FR = BL = 0; signalLevel = 255; 
+          BR = 1; FL = FR = BL = 0; signalLevel = 150; 
           signalDuration = 150;
         }break;
        case(2):
        if(true) {
-          FR = 1; FL = BL = BR = 0; signalLevel = 255; 
-          signalDuration = 200;
+          FR = 1; FL = BL = BR = 0; signalLevel = 175; 
+          signalDuration = 175;
         }break;
         case(3):
         if(true) {
-          FL = 1; FR = BL = BR = 0; signalLevel = 255; 
-          signalDuration = 250;         
+          FL = 1; FR = BL = BR = 0; signalLevel = 200; 
+          signalDuration = 200;         
         }break;
         case(4):
         if(true) {
@@ -573,13 +573,13 @@ void getCurrMotors(void) {
     switch(signalNum){
       case(1):
       if(true) {
-          BR = 1; FL = FR = BL = 0; signalLevel = 255; 
+          BR = 1; FL = FR = BL = 0; signalLevel = 150; 
           signalDuration = 150;
         }break;
        case(2):
        if(true) {
-          FR = 1; FL = BL = BR = 0; signalLevel = 255; 
-          signalDuration = 200;
+          FR = 1; FL = BL = BR = 0; signalLevel = 175; 
+          signalDuration = 175;
         }break;
         case(3):
         if(true) {
@@ -863,7 +863,7 @@ void choosePattern(int targetHeading) {
   }
   if (targetHeading >= 112.5 && targetHeading < 157.5) {
     if(!BLE) Serial.println("BR");
-    SignalPattern = BACKRIGHT_PATTERN;
+    SignalPattern = BACK_PATTERN;
     TMRArd_InitTimer(REPEATTIMER, 10000);
     repeatNum = 4;
     return;
@@ -877,7 +877,7 @@ void choosePattern(int targetHeading) {
   }
   if (targetHeading >= 202.5 && targetHeading < 247.5) {
     if(!BLE) Serial.println("BL");
-    SignalPattern = BACKLEFT_PATTERN;
+    SignalPattern = BACK_PATTERN;
     TMRArd_InitTimer(REPEATTIMER, 10000);
     repeatNum = 4;
     return;
