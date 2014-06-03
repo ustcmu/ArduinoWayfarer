@@ -25,8 +25,8 @@ int signalDuration =       140;
 #define   BATTERY_DURATION   1000
 
 //Define pins for haptic signals for the 8 directions
-#define   FRONTRIGHT_MOTOR 9
-#define   FRONTLEFT_MOTOR  3
+#define   FRONTRIGHT_MOTOR 3
+#define   FRONTLEFT_MOTOR  9
 #define   BACKRIGHT_MOTOR  6
 #define   BACKLEFT_MOTOR   5
 #define   EN_FRONT_MOTOR   4
@@ -285,7 +285,11 @@ void getCurrMotors(void) {
         }
         break;
         case(8):
+
+
         if(true) {
+          //pulse(FL, FR);
+
           FL = FR = 0;
           BL = BR = 0;
           signalLevel = 255;
