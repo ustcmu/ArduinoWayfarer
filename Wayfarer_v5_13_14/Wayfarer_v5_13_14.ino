@@ -231,9 +231,9 @@ void getCurrMotors(void) {
       switch(signalNum) {
         case(1):
         if(true) {
-          FL = FR = 0;        //which motors are on
-          BL = BR = 1;
-          signalLevel = 175;  //level for all motors
+          FL = FR = 1;        //which motors are on
+          BL = BR = 0;
+          signalLevel = 180;  //level for all motors
           signalDuration = 150;  //length of this beat
         }
         break;
@@ -249,7 +249,7 @@ void getCurrMotors(void) {
         if(true) {
           FL = FR = 1;        //which motors are on
           BL = BR = 0;
-          signalLevel = 255;  //level for all motors
+          signalLevel = 210;  //level for all motors
           signalDuration = 200;  //length of this beat
         }
         break;
@@ -263,37 +263,7 @@ void getCurrMotors(void) {
         break;
         case(5):
         if(true) {
-          FL = FR = 1;        //which motors are on
-          BL = BR = 0;
-          signalLevel = 255;  //level for all motors
-          signalDuration = 200;  //length of this beat
-        }
-        break;
-        case(6):
-        if(true) {
-          FL = FR = 0;
-          BL = BR = 0;
-          signalLevel = 255;
-          signalDuration = 100;
-        }break;
-          case(7):
-        if(true) {
-          FL = FR = 1;        //which motors are on
-          BL = BR = 0;
-          signalLevel = 255;  //level for all motors
-          signalDuration = 200;  //length of this beat
-        }
-        break;
-        case(8):
-
-
-        if(true) {
-          //pulse(FL, FR);
-
-          FL = FR = 0;
-          BL = BR = 0;
-          signalLevel = 255;
-          signalDuration = 100;
+          motorPulse(FR, FL, 2);
           repeatPattern();
         }break;
       }break;
@@ -321,9 +291,8 @@ void getCurrMotors(void) {
           signalDuration = 100;
         }break;
         case(5):
-        if(true) {
-          FR = 1; FL = BL = BR = 0; signalLevel = 255; 
-          signalDuration = 300; 
+         if(true) {
+          motorPulse(FR, -1, 2);
           }break;
           case(6):
         if(true) {
@@ -347,8 +316,8 @@ void getCurrMotors(void) {
         }break;
         case(3):
         if(true) {
-          FR = 1; FL = BL = BR = 0; signalLevel = 255; 
-          signalDuration = 225;         
+          FR = 1; FL = BL = BR = 0; signalLevel = 200; 
+          signalDuration = 200;         
         }break;
         case(4):
         if(true) {
@@ -358,30 +327,13 @@ void getCurrMotors(void) {
         case(5):
         if(true) {
           FR = FL = BL = BR = 0; signalLevel = 255; 
-          signalDuration = 100;
+          signalDuration = 75;
         }break;
-        case(6):
-         if(true) {
-          FR = BR = 1; FL = BL = 0; signalLevel = 255; 
-          signalDuration = 300;         
+          case(6):
+          if(true) {
+          motorPulse(FR, BR, 2);
+          repeatPattern();            
         }break;
-        case(7):
-        if(true) {
-          FR  = FL = BL = BR = 0; signalLevel = 255; 
-          signalDuration = 100;
-        }break;
-           case(8):
-         if(true) {
-          FR = BR = 1; FL = BL = 0; signalLevel = 255; 
-          signalDuration = 300;         
-        }break;
-        case(9):
-        if(true) {
-          FR  = FL = BL = BR = 0; signalLevel = 255; 
-          signalDuration = 100;
-          repeatPattern();           
-        }break;
-
       }break;
       
     case(BACKRIGHT_PATTERN):
@@ -423,9 +375,9 @@ void getCurrMotors(void) {
     switch(signalNum) {
         case(1):
         if(true) {
-          FL = FR = 1;        //which motors are on
-          BL = BR = 0;
-          signalLevel = 150;  //level for all motors
+          FL = FR = 0;        //which motors are on
+          BL = BR = 1;
+          signalLevel = 180;  //level for all motors
           signalDuration = 175;  //length of this beat
         }
         break;
@@ -441,7 +393,7 @@ void getCurrMotors(void) {
         if(true) {
           FL = FR = 0;        //which motors are on
           BL = BR = 1;
-          signalLevel = 255;  //level for all motors
+          signalLevel = 210;  //level for all motors
           signalDuration = 200;  //length of this beat
         }
         break;
@@ -455,36 +407,11 @@ void getCurrMotors(void) {
         break;
         case(5):
         if(true) {
-          FL = FR = 0;        //which motors are on
-          BL = BR = 1;
-          signalLevel = 255;  //level for all motors
-          signalDuration = 200;  //length of this beat
-        }
-        break;
-        case(6):
-        if(true) {
-          FL = FR = 0;
-          BL = BR = 0;
-          signalLevel = 255;
-          signalDuration = 100;
-        }break;
-          case(7):
-        if(true) {
-          FL = FR = 0;        //which motors are on
-          BL = BR = 1;
-          signalLevel = 255;  //level for all motors
-          signalDuration = 200;  //length of this beat
-        }
-        break;
-        case(8):
-        if(true) {
-          FL = FR = 0;
-          BL = BR = 0;
-          signalLevel = 255;
-          signalDuration = 100;
+          motorPulse(BR, BL, 2);
           repeatPattern();
         }break;
       }break;
+
       
     case(BACKLEFT_PATTERN):
     switch(signalNum){
@@ -546,30 +473,13 @@ void getCurrMotors(void) {
         case(5):
         if(true) {
           FR  = FL = BL = BR = 0; signalLevel = 255; 
-          signalDuration = 100;
+          signalDuration = 75;
         }break;
         case(6):
          if(true) {
-          FL = BL = 1; FR = BR = 0; signalLevel = 255; 
-          signalDuration = 300;         
+          motorPulse(FL, BL, 2);
+          repeatPattern();            
         }break;
-        case(7):
-        if(true) {
-          FR  = FL = BL = BR = 0; signalLevel = 255; 
-          signalDuration = 100;
-        }break;
-           case(8):
-         if(true) {
-          FL = BL = 1; FR = BR = 0; signalLevel = 255; 
-          signalDuration = 300;         
-        }break;
-        case(9):
-        if(true) {
-          FR  = FL = BL = BR = 0; signalLevel = 255; 
-          signalDuration = 100;
-          repeatPattern();           
-        }break;
-
       }break;
 
     
@@ -597,8 +507,7 @@ void getCurrMotors(void) {
         }break;
         case(5):
         if(true) {
-          FL = 1; FR = BL = BR = 0; signalLevel = 255; 
-          signalDuration = 300; 
+          motorPulse(FL, -1, 2);
           }break;
           case(6):
         if(true) {
@@ -816,7 +725,7 @@ void getCurrMotors(void) {
         if(true) {
           FL = FR = BL = BR = 1;
           signalLevel = 255; 
-          signalDuration = 100;
+          signalDuration = 170;
         }break;
         case(2):
         if(true) {
@@ -828,7 +737,7 @@ void getCurrMotors(void) {
         if(true) {
           FL = FR = BL = BR = 1; 
           signalLevel = 255; 
-          signalDuration = 100;
+          signalDuration = 170;
         }break;
         case(4):
         if(true) {
@@ -838,6 +747,34 @@ void getCurrMotors(void) {
         }break;
     }break;
   }
+}
+
+
+void motorPulse(int pin1, int pin2, int numCycles){
+  // fade in from min to max in increments of 5 points:
+  for(int i=0; i<numCycles; i++){
+        
+  
+    for(int fadeValue = 0 ; fadeValue <= 255; fadeValue +=5) { 
+    // sets the value (range from 0 to 255):
+      analogWrite(pin1, fadeValue);  
+      
+      if(pin2!=-1)analogWrite(pin2, fadeValue);         
+       
+    // wait for 30 milliseconds to see the dimming effect    
+      delay(30);                            
+    } 
+
+  // fade out from max to min in increments of 5 points:
+    for(int fadeValue = 255 ; fadeValue >= 0; fadeValue -=5) { 
+    // sets the value (range from 0 to 255):
+      analogWrite(pin1, fadeValue);        
+      analogWrite(pin2, fadeValue);         
+ 
+    // wait for 30 milliseconds to see the dimming effect    
+      delay(30);                            
+    }
+  } 
 }
 
 void choosePattern(int targetHeading) {
