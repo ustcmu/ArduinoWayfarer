@@ -265,7 +265,7 @@ void getCurrMotors(void) {
         if(true) {
           FL = FR = 1;
           signalLevel = 255;
-          signalDuration = 400;
+          signalDuration = 250;
         }break;
           case(6):
         if(true) {
@@ -277,7 +277,7 @@ void getCurrMotors(void) {
         if(true) {
           FL = FR = 1;
           signalLevel = 255;
-          signalDuration = 400;
+          signalDuration = 300;
         }break;
           case(8):
           if(true) {
