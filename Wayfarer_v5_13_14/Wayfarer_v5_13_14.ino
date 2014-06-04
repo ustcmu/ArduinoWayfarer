@@ -263,7 +263,27 @@ void getCurrMotors(void) {
         break;
         case(5):
         if(true) {
-          motorPulse(FR, FL, 2);
+          FL = FR = 1;
+          signalLevel = 255;
+          signalDuration = 400;
+        }break;
+          case(6):
+        if(true) {
+          FL = FR = 0;
+          signalLevel = 255;
+          signalDuration = 100;
+        }break;
+          case(7):
+        if(true) {
+          FL = FR = 1;
+          signalLevel = 255;
+          signalDuration = 400;
+        }break;
+          case(8):
+          if(true) {
+          FL = FR = 0;
+          signalLevel = 255;
+          signalDuration = 100;
           repeatPattern();
         }break;
       }break;
@@ -290,15 +310,30 @@ void getCurrMotors(void) {
           FR = 0; FL = BL = BR = 0; signalLevel = 255; 
           signalDuration = 100;
         }break;
-        case(5):
-         if(true) {
-          motorPulse(FR, -1, 2);
-          }break;
+             case(5):
+        if(true) {
+          FR = 1;
+          signalLevel = 255;
+          signalDuration = 400;
+        }break;
           case(6):
         if(true) {
-          FR = 0; FL = BL = BR = 0; signalLevel = 255; 
-          signalDuration = 100;  
-          repeatPattern();                   
+          FR = 0;
+          signalLevel = 255;
+          signalDuration = 100;
+        }break;
+          case(7):
+        if(true) {
+          FR = 1;
+          signalLevel = 255;
+          signalDuration = 400;
+        }break;
+          case(8):
+          if(true) {
+           FR = 0;
+          signalLevel = 255;
+          signalDuration = 100;
+          repeatPattern();
         }break;
     }break;
     
@@ -322,17 +357,37 @@ void getCurrMotors(void) {
         case(4):
         if(true) {
           FR = BR = 1; FL = BL = 0; signalLevel = 255; 
-          signalDuration = 300;         
+          signalDuration = 200;         
         }break;
         case(5):
         if(true) {
           FR = FL = BL = BR = 0; signalLevel = 255; 
           signalDuration = 75;
         }break;
-          case(6):
+           case(6):
+        if(true) {
+          BR= FR = 1;
+          signalLevel = 255;
+          signalDuration = 400;
+        }break;
+          case(7):
+        if(true) {
+          BR = FR = 0;
+          signalLevel = 255;
+          signalDuration = 100;
+        }break;
+          case(8):
+        if(true) {
+          BR = FR = 1;
+          signalLevel = 255;
+          signalDuration = 400;
+        }break;
+          case(9):
           if(true) {
-          motorPulse(FR, BR, 2);
-          repeatPattern();            
+          BR = FR = 0;
+          signalLevel = 255;
+          signalDuration = 100;
+          repeatPattern();
         }break;
       }break;
       
@@ -405,9 +460,29 @@ void getCurrMotors(void) {
           signalDuration = 100;  //length of this beat
         }
         break;
-        case(5):
+          case(5):
         if(true) {
-          motorPulse(BR, BL, 2);
+          BL = BR = 1;
+          signalLevel = 255;
+          signalDuration = 400;
+        }break;
+          case(6):
+        if(true) {
+          BL = BR = 0;
+          signalLevel = 255;
+          signalDuration = 100;
+        }break;
+          case(7):
+        if(true) {
+          BL = BR = 1;
+          signalLevel = 255;
+          signalDuration = 400;
+        }break;
+          case(8):
+          if(true) {
+          BL = BR = 0;
+          signalLevel = 255;
+          signalDuration = 100;
           repeatPattern();
         }break;
       }break;
@@ -475,10 +550,30 @@ void getCurrMotors(void) {
           FR  = FL = BL = BR = 0; signalLevel = 255; 
           signalDuration = 75;
         }break;
-        case(6):
-         if(true) {
-          motorPulse(FL, BL, 2);
-          repeatPattern();            
+            case(6):
+        if(true) {
+          BL= FL = 1;
+          signalLevel = 255;
+          signalDuration = 400;
+        }break;
+          case(7):
+        if(true) {
+          BL = FL = 0;
+          signalLevel = 255;
+          signalDuration = 100;
+        }break;
+          case(8):
+        if(true) {
+          BL = FL = 1;
+          signalLevel = 255;
+          signalDuration = 400;
+        }break;
+          case(9):
+          if(true) {
+          BL = FL = 0;
+          signalLevel = 255;
+          signalDuration = 100;
+          repeatPattern();
         }break;
       }break;
 
@@ -507,13 +602,28 @@ void getCurrMotors(void) {
         }break;
         case(5):
         if(true) {
-          motorPulse(FL, -1, 2);
-          }break;
+          FL = 1;
+          signalLevel = 255;
+          signalDuration = 400;
+        }break;
           case(6):
         if(true) {
-          FR = FL = BL = BR = 0; signalLevel = 255; 
-          signalDuration = 100;  
-          repeatPattern();                   
+          FL = 0;
+          signalLevel = 255;
+          signalDuration = 100;
+        }break;
+          case(7):
+        if(true) {
+          FL = 1;
+          signalLevel = 255;
+          signalDuration = 400;
+        }break;
+          case(8):
+          if(true) {
+           FL = 0;
+          signalLevel = 255;
+          signalDuration = 100;
+          repeatPattern();
         }break;
     }break;
     
@@ -755,24 +865,23 @@ void motorPulse(int pin1, int pin2, int numCycles){
   for(int i=0; i<numCycles; i++){
         
   
-    for(int fadeValue = 0 ; fadeValue <= 255; fadeValue +=5) { 
+    for(int fadeValue = 0 ; fadeValue <= 255; fadeValue +=10) { 
     // sets the value (range from 0 to 255):
       analogWrite(pin1, fadeValue);  
       
       if(pin2!=-1)analogWrite(pin2, fadeValue);         
-       
     // wait for 30 milliseconds to see the dimming effect    
-      delay(30);                            
+      delay(40);                            
     } 
 
   // fade out from max to min in increments of 5 points:
-    for(int fadeValue = 255 ; fadeValue >= 0; fadeValue -=5) { 
+    for(int fadeValue = 255 ; fadeValue >= 0; fadeValue -=10) { 
     // sets the value (range from 0 to 255):
       analogWrite(pin1, fadeValue);        
-      analogWrite(pin2, fadeValue);         
+      if(pin2!=-1)analogWrite(pin2, fadeValue);         
  
     // wait for 30 milliseconds to see the dimming effect    
-      delay(30);                            
+      delay(40);                            
     }
   } 
 }
